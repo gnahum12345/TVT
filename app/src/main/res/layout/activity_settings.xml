@@ -1,0 +1,385 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Student"
+    android:orientation="vertical"
+    android:id="@+id/settings"
+    android:weightSum="1">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Class Name"
+        android:ems="10"
+        android:id="@+id/lecture1"
+        android:layout_alignTop="@+id/a"
+        android:layout_toEndOf="@+id/a"
+        android:layout_marginStart="37dp"
+        android:textSize="12.5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="A"
+        android:id="@+id/a"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Teacher"
+        android:ems="10"
+        android:id="@+id/teacher1"
+        android:layout_below="@+id/lecture1"
+        android:layout_alignStart="@+id/lecture1"
+        android:textSize="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/email1"
+        android:text=""
+        android:hint="Teacher Email"
+        android:linksClickable="false"
+        android:textSize="10dp"
+        android:layout_below="@+id/lecture1"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/teacher1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="B"
+        android:id="@+id/b"
+        android:layout_below="@+id/email1"
+        android:layout_toStartOf="@+id/lecture1"
+        android:layout_alignStart="@+id/a" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Class2 Name"
+        android:ems="10"
+        android:id="@+id/lecture2"
+        android:layout_alignTop="@+id/b"
+        android:layout_alignStart="@+id/teacher1"
+        android:textSize="12.5dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Teacher2"
+        android:ems="10"
+        android:id="@+id/teacher2"
+        android:layout_below="@+id/lecture2"
+        android:layout_alignStart="@+id/lecture2"
+        android:textSize="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/email2"
+        android:text=""
+        android:hint="Teacher2 email"
+        android:layout_below="@+id/lecture2"
+        android:textSize="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/email1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="C"
+        android:id="@+id/c"
+        android:layout_below="@+id/email2"
+        android:layout_toStartOf="@+id/email2"
+        android:layout_alignStart="@+id/b"
+        android:layout_alignEnd="@+id/b" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Class3 Name"
+        android:ems="10"
+        android:id="@+id/lecture3"
+        android:layout_alignTop="@+id/c"
+        android:layout_alignEnd="@+id/lecture2"
+        android:textSize="12.5dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Teacher3"
+        android:ems="10"
+        android:id="@+id/teacher3"
+        android:layout_below="@+id/lecture3"
+        android:layout_alignStart="@+id/lecture3"
+        android:textSize="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/email3"
+        android:text=""
+        android:hint="Teacher3 Email"
+        android:layout_below="@+id/lecture3"
+        android:textSize="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/email2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="D"
+        android:id="@+id/d"
+        android:layout_alignTop="@+id/lecture4"
+        android:layout_alignStart="@+id/e" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Class4 Name"
+        android:ems="10"
+        android:id="@+id/lecture4"
+        android:textSize="12.5dp"
+        android:layout_below="@+id/teacher3"
+        android:layout_alignStart="@+id/teacher3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Teacher4"
+        android:ems="10"
+        android:id="@+id/teacher4"
+        android:textSize="10dp"
+        android:layout_below="@+id/lecture4"
+        android:layout_alignStart="@+id/lecture4" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/email4"
+        android:text=""
+        android:hint="Teacher4 Email"
+        android:textSize="10dp"
+        android:layout_below="@+id/lecture4"
+        android:layout_alignStart="@+id/email3"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="E"
+        android:id="@+id/e"
+        android:layout_below="@+id/teacher4"
+        android:layout_toStartOf="@+id/lecture1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Class5 Name"
+        android:ems="10"
+        android:id="@+id/lecture5"
+        android:textSize="12.5dp"
+        android:layout_alignTop="@+id/e"
+        android:layout_alignStart="@+id/teacher4" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Teacher5"
+        android:ems="10"
+        android:id="@+id/teacher5"
+        android:textSize="10dp"
+        android:layout_alignTop="@+id/email5"
+        android:layout_toStartOf="@+id/email5" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/email5"
+        android:text=""
+        android:hint="Teacher5 Email"
+        android:textSize="10dp"
+        android:layout_below="@+id/e"
+        android:layout_alignStart="@+id/email4"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="F"
+        android:id="@+id/f"
+        android:layout_below="@+id/teacher5"
+        android:layout_alignStart="@+id/e" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Class6 Name"
+        android:ems="10"
+        android:id="@+id/lecture6"
+        android:textSize="12.5dp"
+        android:layout_below="@+id/teacher5"
+        android:layout_alignStart="@+id/teacher5" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Teacher6"
+        android:ems="10"
+        android:id="@+id/teacher6"
+        android:textSize="10dp"
+        android:layout_below="@+id/f"
+        android:layout_alignStart="@+id/lecture6" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/email6"
+        android:text=""
+        android:hint="Teacher6 Email"
+        android:textSize="10dp"
+        android:layout_below="@+id/lecture6"
+        android:layout_alignStart="@+id/email5"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="G"
+        android:id="@+id/g"
+        android:layout_below="@+id/teacher6"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Class7 Name"
+        android:ems="10"
+        android:id="@+id/lecture7"
+        android:textSize="12.5dp"
+        android:layout_alignTop="@+id/g"
+        android:layout_alignStart="@+id/teacher6" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Teacher7"
+        android:ems="10"
+        android:id="@+id/teacher7"
+        android:textSize="10dp"
+        android:layout_below="@+id/g"
+        android:layout_alignStart="@+id/lecture7" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/email7"
+        android:text=""
+        android:hint="Teacher7 Email"
+        android:textSize="10dp"
+        android:layout_alignTop="@+id/teacher7"
+        android:layout_alignStart="@+id/email6"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="H"
+        android:id="@+id/h"
+        android:layout_below="@+id/teacher7"
+        android:layout_alignEnd="@+id/f" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Class8 Name"
+        android:ems="10"
+        android:id="@+id/lecture8"
+        android:textSize="12.5dp"
+        android:layout_below="@+id/teacher7"
+        android:layout_alignStart="@+id/teacher7" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Teacher8"
+        android:ems="10"
+        android:id="@+id/teacher8"
+        android:textSize="10dp"
+        android:layout_below="@+id/h"
+        android:layout_alignStart="@+id/lecture8" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/email8"
+        android:text=""
+        android:hint="Teacher8 Email"
+        android:textSize="10dp"
+        android:layout_below="@+id/h"
+        android:layout_alignStart="@+id/email7"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>

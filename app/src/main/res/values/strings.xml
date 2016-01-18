@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Tarbut V Torah</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="handbook">Student Handbook</string>
+    <string name="master_cal">TVT Master Calendar</string>
+    <string name="schedule">Bell Schedule</string>
+    <string name="us_letter_rot">US Letter Rotation</string>
+    <string name="ms_letter_rot">MS Letter Rotation</string>
+    <string name="asb_cal_event">ASB Calendar Events</string>
+    <string name="ms_student_con">MS-Student Council</string>
+    <string name="blood">Blood Drive Consent</string>
+    <string name="map">Maps</string>
+    <string name="netclass">Netclassroom</string>
+    <string name="browser">Internet</string>
+</resources>
