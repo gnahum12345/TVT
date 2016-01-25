@@ -42,7 +42,11 @@
             >
 
         </activity>
-
+        <activity android:name=".Questions"
+            android:label="@string/suggestions"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Student">
+        </activity>
 
         
         

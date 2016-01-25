@@ -16,27 +16,27 @@ public class Student extends Activity {
     ImageView teacherpic1;
     TextView class1;
     TextView teacher1;
-    TextView twitter1;
+    TextView google1;
     TextView period1;
 
     //second period
     ImageView teacherpic2;
     TextView class2;
     TextView teacher2;
-    TextView twitter2;
+    TextView google2;
     TextView period2;
 
     //Third period
     ImageView teacherpic3;
     TextView class3;
     TextView teacher3;
-    TextView twitter3;
+    TextView google3;
     TextView period3;
     //Fourth
     ImageView teacherpic4;
     TextView class4;
     TextView teacher4;
-    TextView twitter4;
+    TextView google4;
     TextView period4;
 
 
@@ -44,7 +44,7 @@ public class Student extends Activity {
     ImageButton netClass;
     ImageButton classes;
     ImageButton questions;
-    ImageButton insta;
+    ImageButton sports;
 
     //..................Twitter feed..........................
     TextView studentTwitterfeed;
@@ -61,25 +61,25 @@ public class Student extends Activity {
         teacherpic1 = (ImageView) findViewById(R.id.teacherpic1);
         class1 = (TextView) findViewById(R.id.class1);
         teacher1 = (TextView) findViewById(R.id.teacher1);
-        twitter1 = (TextView) findViewById(R.id.twitter1);
+        google1 = (TextView) findViewById(R.id.twitter1);
         period1 = (TextView) findViewById(R.id.period1);
         //second period
         teacherpic2 = (ImageView) findViewById(R.id.teacherpic2);
         class2 = (TextView) findViewById(R.id.class2);
         teacher2 = (TextView) findViewById(R.id.teacher2);
-        twitter2 = (TextView) findViewById(R.id.twitter2);
+        google2 = (TextView) findViewById(R.id.twitter2);
         period2 = (TextView) findViewById(R.id.period2);
         //third period
         teacherpic3 = (ImageView) findViewById(R.id.teacherpic3);
         class3 = (TextView) findViewById(R.id.class3);
         teacher3 = (TextView) findViewById(R.id.teacher3);
-        twitter3 = (TextView) findViewById(R.id.twitter3);
+        google3 = (TextView) findViewById(R.id.twitter3);
         period3 = (TextView) findViewById(R.id.period3);
         //fourth period
         teacherpic4 = (ImageView) findViewById(R.id.teacherpic4);
         class4 = (TextView) findViewById(R.id.class4);
         teacher4 = (TextView) findViewById(R.id.teacher4);
-        twitter4 = (TextView) findViewById(R.id.twitter4);
+        google4 = (TextView) findViewById(R.id.twitter4);
         period4 = (TextView) findViewById(R.id.period4);
 
        //.....................Test period 1........................
@@ -90,9 +90,9 @@ public class Student extends Activity {
         netClass = (ImageButton) findViewById(R.id.netClass);
         classes = (ImageButton) findViewById(R.id.classes);
         questions = (ImageButton) findViewById(R.id.suggestions);
-        insta = (ImageButton) findViewById(R.id.Instagram);
+        sports = (ImageButton) findViewById(R.id.Sports);
         parasha = (TextView) findViewById(R.id.Parasha);
-        studentTwitterfeed = (TextView) findViewById(R.id.twitterfeed);
+        studentTwitterfeed = (TextView) findViewById(R.id.google);
 
         netClass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +101,26 @@ public class Student extends Activity {
                 intent.putExtra("URL", "https://13066netclass.blackbaudondemand.com/NetClassroom7/Forms/login.aspx?ReturnUrl=%2fNetClassroom7%2fForms%2fNCShell.aspx");
                 intent.putExtra("Activity","NetClassroom");
                 startActivity(intent);
+            }
+        });
+
+        sports.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        questions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Student.this, Questions.class);
+                startActivity(intent);
+            }
+        });
+        classes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 
@@ -122,7 +142,7 @@ public class Student extends Activity {
         teacherpic1.setImageResource(teacherID);
         class1.setText(lecture);
         teacher1.setText(teacherName);
-        twitter1.setText(twitterfeed);
+        google1.setText(twitterfeed);
         period1.setText(periodLetter.toUpperCase());
 
 
@@ -132,7 +152,7 @@ public class Student extends Activity {
         teacherpic2.setImageResource(teacherID);
         class2.setText(lecture);
         teacher2.setText(teacherName);
-        twitter2.setText(twitterfeed);
+        google2.setText(twitterfeed);
         period2.setText(periodLetter.toUpperCase());
 
     }
@@ -141,7 +161,7 @@ public class Student extends Activity {
         teacherpic3.setImageResource(teacherID);
         class3.setText(lecture);
         teacher3.setText(teacherName);
-        twitter3.setText(twitterfeed);
+        google3.setText(twitterfeed);
         period3.setText(periodLetter.toUpperCase());
 
 
@@ -152,7 +172,7 @@ public class Student extends Activity {
         teacherpic4.setImageResource(teacherID);
         class4.setText(lecture);
         teacher4.setText(teacherName);
-        twitter4.setText(twitterfeed);
+        google4.setText(twitterfeed);
         period4.setText(periodLetter.toUpperCase());
 
 

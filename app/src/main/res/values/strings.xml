@@ -14,4 +14,5 @@
     <string name="map">Maps</string>
     <string name="netclass">Netclassroom</string>
     <string name="browser">Internet</string>
+    <string name="suggestions">Suggestions</string>
 </resources>

@@ -49,9 +49,16 @@ public class Browser extends Activity {
         url += getIntent().getStringExtra("URL");
         if(url.equals(""))
             Log.w("URL","no url passed");
-          // /  url = "https://13066netclass.blackbaudondemand.com/NetClassroom7/Forms/login.aspx?ReturnUrl=%2fNetClassroom7%2fForms%2fNCShell.aspx";
+          // /  url = "https://my.tarbut.com";
         browser.loadUrl(url);
         Log.w("Activity","Activity:" + activity + "\nid: " + id + "\nURl:" + url);
+        while(browser.canGoForward()){
+            browser.goForward();
+        }
+        while(browser.canGoBack()){
+            browser.goBack();
+        }
+
     }
 
     @Override
