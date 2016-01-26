@@ -47,7 +47,21 @@
             android:screenOrientation="portrait"
             android:parentActivityName=".Student">
         </activity>
+        <activity
+            android:name=".Sports"
+            android:label="@string/sports"
+            android:screenOrientation="portrait"
+            android:icon="@mipmap/sports"
+            android:parentActivityName=".Student">
 
+        </activity>
+        <activity
+            android:name=".Classes"
+            android:icon="@mipmap/classes"
+            android:label="Classes"
+            android:parentActivityName=".Student"
+            android:screenOrientation="portrait">
+        </activity>
         
         
     

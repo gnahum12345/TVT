@@ -107,7 +107,8 @@ public class Student extends Activity {
         sports.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(Student.this,Sports.class);
+                startActivity(intent);
             }
         });
         questions.setOnClickListener(new View.OnClickListener() {
@@ -120,7 +121,8 @@ public class Student extends Activity {
         classes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(Student.this, Classes.class);
+                startActivity(intent);
             }
         });
 
@@ -184,6 +186,7 @@ public class Student extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_student, menu);
         menu.findItem(R.id.zeroPeriod).setVisible(false);
+        menu.findItem(R.id.saveData).setVisible(false);
         return true;
     }
 

@@ -55,6 +55,7 @@ public class Settings extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        Log.w("Settings","Im in settings");
         //..Period1..//
         lecture1 = (EditText) findViewById(R.id.lecture1);
         teacher1 = (EditText) findViewById(R.id.teacher1);
@@ -95,7 +96,6 @@ public class Settings extends Activity {
         teacher8 = (EditText) findViewById(R.id.teacher8);
         email8 = (EditText) findViewById(R.id.email8);
 
-        saveData();
     }
 
     private void saveData(){
@@ -136,7 +136,7 @@ public class Settings extends Activity {
         //Zero Period
         editor.putBoolean("ZeroPeriod",zeroPeriod);
         //TODO put in time
-        editor.commit();
+        editor.apply();
     }
 
 
@@ -183,49 +183,49 @@ public class Settings extends Activity {
             case 1:
                 r = email1.getText().toString();
                 if(r.equals(""))
-                    return "Email1";
+                    return "";
                 else
                     return r;
             case 2:
                 r = email2.getText().toString();
                 if(r.equals(""))
-                    return "Email2";
+                    return "";
                 else
                     return r;
             case 3:
                 r = email3.getText().toString();
                 if(r.equals(""))
-                    return "Email3";
+                    return "";
                 else
                     return r;
             case 4:
                 r = email4.getText().toString();
                 if(r.equals(""))
-                    return "Email4";
+                    return "";
                 else
                     return r;
             case 5:
                 r = email5.getText().toString();
                 if(r.equals(""))
-                    return "Email5";
+                    return "";
                 else
                     return r;
             case 6:
                 r = email6.getText().toString();
                 if(r.equals(""))
-                    return "Email6";
+                    return "";
                 else
                     return r;
             case 7:
                 r = email7.getText().toString();
                 if(r.equals(""))
-                    return "Email7";
+                    return "";
                 else
                     return r;
             case 8:
                 r = email8.getText().toString();
                 if(r.equals(""))
-                    return "Email8";
+                    return "";
                 else
                     return r;
         }
@@ -238,49 +238,49 @@ public class Settings extends Activity {
             case 1:
                 r = teacher1.getText().toString();
                 if(r.equals(""))
-                    return "Teacher1";
+                    return "";
                 else
                     return r;
             case 2:
                 r = teacher2.getText().toString();
                 if(r.equals(""))
-                    return "Teacher2";
+                    return "";
                 else
                     return r;
             case 3:
                 r = teacher3.getText().toString();
                 if(r.equals(""))
-                    return "Teacher3";
+                    return "";
                 else
                     return r;
             case 4:
                 r = teacher4.getText().toString();
                 if(r.equals(""))
-                    return "Teacher4";
+                    return "";
                 else
                     return r;
             case 5:
                 r = teacher5.getText().toString();
                 if(r.equals(""))
-                    return "Teacher5";
+                    return "";
                 else
                     return r;
             case 6:
                 r = teacher6.getText().toString();
                 if(r.equals(""))
-                    return "Teacher6";
+                    return "";
                 else
                     return r;
             case 7:
                 r = teacher7.getText().toString();
                 if(r.equals(""))
-                    return "Teacher7";
+                    return "";
                 else
                     return r;
             case 8:
                 r = teacher8.getText().toString();
                 if(r.equals(""))
-                    return "Teacher8";
+                    return "";
                 else
                     return r;
         }
@@ -293,49 +293,49 @@ public class Settings extends Activity {
             case 1:
                 r = lecture1.getText().toString();
                 if(r.equals(""))
-                    return "A";
+                    return "";
                 else
                     return r;
             case 2:
                 r = lecture2.getText().toString();
                 if(r.equals(""))
-                    return "B";
+                    return "";
                 else
                     return r;
             case 3:
                 r = lecture3.getText().toString();
                 if(r.equals(""))
-                    return "C";
+                    return "";
                 else
                     return r;
             case 4:
                 r = lecture4.getText().toString();
                 if(r.equals(""))
-                    return "D";
+                    return "";
                 else
                     return r;
             case 5:
                 r = lecture5.getText().toString();
                 if(r.equals(""))
-                    return "E";
+                    return "";
                 else
                     return r;
             case 6:
                 r = lecture6.getText().toString();
                 if(r.equals(""))
-                    return "F";
+                    return "";
                 else
                     return r;
             case 7:
                 r = lecture7.getText().toString();
                 if(r.equals(""))
-                    return "G";
+                    return "";
                 else
                     return r;
             case 8:
                 r = lecture8.getText().toString();
                 if(r.equals(""))
-                    return "H";
+                    return "";
                 else
                     return r;
         }
@@ -347,6 +347,7 @@ public class Settings extends Activity {
         getMenuInflater().inflate(R.menu.menu_student, menu);
         menu.findItem(R.id.action_settings).setVisible(false);
         menu.setGroupVisible(R.id.oldTVT,false);
+
         return true;
     }
 
@@ -357,36 +358,8 @@ public class Settings extends Activity {
 
         switch(id) {
             case android.R.id.home:
-                saveData();
                 finish();
                 return true;
-            case R.id.maps:
-                //TODO go to maps activity and direct from current location to 5 federation way
-                return true;
-            case R.id.blood:
-                //TODO go to activity with the blood drive consent form
-                return true;
-            case R.id.asbCal:
-                //TODO go to activity with calendar that shows everything tab for ASB AND For MASTER CAL
-                return true;
-            case R.id.masterCal:
-                //TODO go to the same activity as asbCal
-                return true;
-            case R.id.studentCouncil:
-                //TODO go to the same activity as asbCal has a tab for MS
-                return true;
-            case R.id.USletterRot:
-                //TODO go to an activity with the letter rotation.
-                return true;
-            case R.id.MSletterRot:
-                //TODO go to an activity with the letter rotation. same as US but has a tab for MS
-                return true;
-            case R.id.schedule:
-                //TODO go to an activity with the schedule.
-                return true;
-            case R.id.handbook:
-                //TODO go to an activity with the schedule and handbook.
-                break;
             case R.id.zeroPeriod:
                 //TODO make dialog box that asks the user the time of their zero period.
                 if (!zeroPeriod) {
@@ -396,6 +369,12 @@ public class Settings extends Activity {
                     Toast.makeText(getApplicationContext(), "You will be notified about your classes at normal time", Toast.LENGTH_LONG).show();
                     zeroPeriod = false;
                 }
+                break;
+            case R.id.saveData:
+                saveData();
+                Toast.makeText(getApplicationContext(),"Your data was saved", Toast.LENGTH_SHORT).show();
+
+
         }
 
         return super.onOptionsItemSelected(item);

@@ -7,7 +7,8 @@
     android:orientation="vertical"
     android:weightSum="1"
     android:id="@+id/student"
-    android:background="#ffffffff">
+    android:background="#ffffffff"
+    >
 
     <LinearLayout
         android:orientation="horizontal"
