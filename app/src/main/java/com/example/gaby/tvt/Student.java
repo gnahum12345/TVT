@@ -126,10 +126,6 @@ public class Student extends Activity {
             }
         });
 
-
-
-
-
     }
 
     public void changePeriods(){
@@ -211,14 +207,18 @@ public class Student extends Activity {
            case R.id.blood:
                //TODO go to activity with the blood drive consent form
                intent = new Intent(Student.this, Browser.class);
-               intent.putExtra("url","A URL"); //add the url for blood drive
+               intent.putExtra("URL","A URL"); //add the url for blood drive
+               intent.putExtra("Activity","Blood Drive");
+             //  intent.putExtra("ActivityID",R.id.blood);
                startActivity(intent);
                return true;
            case R.id.asbCal:
                //TODO go to activity with calendar that shows everything tab for ASB AND For MASTER CAL
+
                return true;
            case R.id.masterCal:
                //TODO go to the same activity as asbCal
+
                return true;
            case R.id.studentCouncil:
                //TODO go to the same activity as asbCal has a tab for MS
