@@ -200,7 +200,6 @@ public class Student extends Activity {
                //TODO go to maps activity and direct from current location to 5 federation way
                return true;
            case R.id.action_settings:
-               //TODO go to the settings activity
                intent = new Intent(Student.this, Settings.class);
                startActivity(intent);
                return true;
@@ -213,15 +212,22 @@ public class Student extends Activity {
                startActivity(intent);
                return true;
            case R.id.asbCal:
-               //TODO go to activity with calendar that shows everything tab for ASB AND For MASTER CAL
-
+               intent = new Intent(Student.this, Calendar.class);
+               intent.putExtra("Info","Check yes or no if you want the ASB's Calendar to be synced with your Google Calendar");
+               intent.putExtra("ActivityName","ASB's Calendar");
+               startActivity(intent);
                return true;
            case R.id.masterCal:
-               //TODO go to the same activity as asbCal
-
+               intent = new Intent(Student.this,Calendar.class);
+               intent.putExtra("Info","Check yes or no if you want TVT's Master Calendar to be synced with your Google Calendar");
+               intent.putExtra("ActivityName","TVT Master Calendar");
+               startActivity(intent);
                return true;
            case R.id.studentCouncil:
-               //TODO go to the same activity as asbCal has a tab for MS
+               intent = new Intent(Student.this,Calendar.class);
+               intent.putExtra("Info","Check yes or no if you want the Student Council's calendar to be synced with your Google Calendar");
+               intent.putExtra("ActivityName","Student Council's Calendar");
+               startActivity(intent);
                return true;
            case R.id.USletterRot:
                //TODO go to an activity with the letter rotation.
@@ -238,7 +244,8 @@ public class Student extends Activity {
            case R.id.handbook:
                //TODO go to an activity with the schedule and handbook.
                intent = new Intent(Student.this, Browser.class);
-               intent.putExtra("url","a url"); //add the url for handbook
+               intent.putExtra("url","http://my.tarbut.com/document.doc?id=112"); //add the url for handbook
+               intent.putExtra("Activity","Student Handbook");
                startActivity(intent);
                break;
        }

@@ -62,7 +62,11 @@
             android:parentActivityName=".Student"
             android:screenOrientation="portrait">
         </activity>
-        
+        <activity
+            android:name=".Calendar"
+            android:parentActivityName=".Student"
+            android:screenOrientation="portrait">
+        </activity>
         
     
     
