@@ -1,10 +1,12 @@
 package com.example.gaby.tvt;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +30,7 @@ public class Settings extends Activity {
     EditText lecture6;
     EditText lecture7;
     EditText lecture8;
-
+  //  EditText zeroLecture;
 //......Teacher....................//
     EditText teacher1;
     EditText teacher2;
@@ -38,7 +40,7 @@ public class Settings extends Activity {
     EditText teacher6;
     EditText teacher7;
     EditText teacher8;
-
+  //  EditText teacher0;
 //......email.................//
     EditText email1;
     EditText email2;
@@ -48,7 +50,9 @@ public class Settings extends Activity {
     EditText email6;
     EditText email7;
     EditText email8;
+ //   EditText email0;
 
+  //  EditText daysOfClass;
     boolean zeroPeriod = false;
 
     @Override
@@ -96,6 +100,8 @@ public class Settings extends Activity {
         teacher8 = (EditText) findViewById(R.id.teacher8);
         email8 = (EditText) findViewById(R.id.email8);
 
+
+
     }
 
     private void saveData(){
@@ -135,6 +141,7 @@ public class Settings extends Activity {
         editor.putString("Email8", getEmail(8));
         //Zero Period
         editor.putBoolean("ZeroPeriod",zeroPeriod);
+
         //TODO put in time
         editor.apply();
     }
@@ -145,6 +152,7 @@ public class Settings extends Activity {
                 getSharedPreferences("MyPrefs",
                         Context.MODE_PRIVATE);
         //lectures
+//        zeroLecture.setText(sp.getString("Lecture0",""));
         lecture1.setText(sp.getString("Lecture1",""));
         lecture2.setText(sp.getString("Lecture2",""));
         lecture3.setText(sp.getString("Lecture3",""));
@@ -154,6 +162,7 @@ public class Settings extends Activity {
         lecture7.setText(sp.getString("Lecture7",""));
         lecture8.setText(sp.getString("Lecture8",""));
         //Teachers
+ //       teacher0.setText(sp.getString("Teacher0",""));
         teacher1.setText(sp.getString("Teacher1",""));
         teacher2.setText(sp.getString("Teacher2",""));
         teacher3.setText(sp.getString("Teacher3",""));
@@ -163,6 +172,7 @@ public class Settings extends Activity {
         teacher7.setText(sp.getString("Teacher7",""));
         teacher8.setText(sp.getString("Teacher8",""));
         //Email
+   //     email0.setText(sp.getString("Email0",""));
         email1.setText(sp.getString("Email1",""));
         email2.setText(sp.getString("Email2",""));
         email3.setText(sp.getString("Email3",""));
@@ -172,7 +182,7 @@ public class Settings extends Activity {
         email7.setText(sp.getString("Email7",""));
         email8.setText(sp.getString("Email8",""));
 
-        zeroPeriod = sp.getBoolean("ZeroPeriod",false);
+     //   zeroPeriod = sp.getBoolean("ZeroPeriod",false);
 
     }
 
@@ -354,7 +364,7 @@ public class Settings extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        TimePickerDialog zero;
+       // TimePickerDialog zero;
 
         switch(id) {
             case android.R.id.home:
@@ -362,13 +372,30 @@ public class Settings extends Activity {
                 return true;
             case R.id.zeroPeriod:
                 //TODO make dialog box that asks the user the time of their zero period.
-                if (!zeroPeriod) {
+                /*new AlertDialog.Builder(getApplicationContext())
+                        .setTitle("Zero Period")
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // continue with delete
+                            }
+                        })
+                        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // do nothing
+                            }
+                        })
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();*/
+                saveData();
+                Intent intent = new Intent(Settings.this,Zero.class);
+                startActivity(intent);
+              /*  if (!zeroPeriod) {
                     Toast.makeText(getApplicationContext(), "You have zero period and will be notified earlier", Toast.LENGTH_LONG).show();
                     zeroPeriod = true;
                 }else{
                     Toast.makeText(getApplicationContext(), "You will be notified about your classes at normal time", Toast.LENGTH_LONG).show();
                     zeroPeriod = false;
-                }
+                }*/
                 break;
             case R.id.saveData:
                 saveData();
