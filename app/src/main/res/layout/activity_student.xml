@@ -14,7 +14,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/period"
+        android:id="@+id/LinearLayoutPeriod1"
         android:weightSum="1">
 
         <ImageView
@@ -83,7 +83,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/LinearLayout2"
+        android:id="@+id/LinearLayoutPeriod2"
         android:weightSum="1">
 
         <ImageView
@@ -151,7 +151,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/LinearLayout3"
+        android:id="@+id/LinearLayoutPeriod3"
         android:weightSum="1">
 
         <ImageView
@@ -218,7 +218,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/LinearLayout4"
+        android:id="@+id/LinearLayoutPeriod4"
         android:weightSum="1">
 
         <ImageView

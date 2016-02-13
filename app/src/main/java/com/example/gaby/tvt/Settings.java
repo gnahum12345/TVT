@@ -389,6 +389,7 @@ public class Settings extends Activity {
                 saveData();
                 Intent intent = new Intent(Settings.this,Zero.class);
                 startActivity(intent);
+
               /*  if (!zeroPeriod) {
                     Toast.makeText(getApplicationContext(), "You have zero period and will be notified earlier", Toast.LENGTH_LONG).show();
                     zeroPeriod = true;
@@ -400,8 +401,6 @@ public class Settings extends Activity {
             case R.id.saveData:
                 saveData();
                 Toast.makeText(getApplicationContext(),"Your data was saved", Toast.LENGTH_SHORT).show();
-
-
         }
 
         return super.onOptionsItemSelected(item);

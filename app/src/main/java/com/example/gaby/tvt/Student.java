@@ -1,17 +1,28 @@
 package com.example.gaby.tvt;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.Date;
 
 
 public class Student extends Activity {
+    String [] periods = {
+      "A","B","C","D","E","F","G","H"
+    };
+
     //First period
     ImageView teacherpic1;
     TextView class1;
@@ -81,9 +92,45 @@ public class Student extends Activity {
         teacher4 = (TextView) findViewById(R.id.teacher4);
         google4 = (TextView) findViewById(R.id.twitter4);
         period4 = (TextView) findViewById(R.id.period4);
+        //.....................linearlayouts........................//
+        LinearLayout linearLayoutPeriod1 = (LinearLayout) findViewById(R.id.LinearLayoutPeriod1);
+        LinearLayout linearLayoutPeriod2 = (LinearLayout) findViewById(R.id.LinearLayoutPeriod2);
+        LinearLayout linearLayoutPeriod3 = (LinearLayout) findViewById(R.id.LinearLayoutPeriod3);
+        LinearLayout linearLayoutPeriod4 = (LinearLayout) findViewById(R.id.LinearLayoutPeriod4);
+        //........................parasha............................//
+        parasha = (TextView) findViewById(R.id.Parasha);
 
-       //.....................Test period 1........................
+        parasha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "http://www.chabad.org/parshah/default.asp?tdate=";
+                String date = findDate();
+                url +=date;
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+
+
+            }
+        });
+        //.....................Test period 1........................//
+
+
         changePeriods();
+        setPeriods();
+
+        View.OnClickListener click = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Student.this,Classes.class);
+                startActivity(intent);
+            }
+        };
+
+        linearLayoutPeriod1.setOnClickListener(click);
+        linearLayoutPeriod2.setOnClickListener(click);
+        linearLayoutPeriod3.setOnClickListener(click);
+        linearLayoutPeriod4.setOnClickListener(click);
        //.....................end of test.........................
 
         //After periods
@@ -127,13 +174,124 @@ public class Student extends Activity {
         });
 
     }
+    private static String findDate(){
+        Date d = new Date();
+        int month = findMonth(d.toString());
+        String mo;
+        if(month < 10){
+            mo = "0"+month;
+        }else{
+            mo = "" + month;
+        }
+        String day = findDay(d.toString());
+        String year = findYear(d.toString());
+        return (mo + "/" + day + "/" + year);
+    }
+    private static String findYear(String date){
+        date = date.trim();
+        //System.out.println(date.length());
+        date = date.substring(date.length() - 4);
+        return date;
+    }
+    private static String findDay(String date){
+        date = date.trim();
+        date = date.substring(8,10);
+        // System.out.println(date);
+        return date;
+    }
+    private static int findMonth(String date){
+       String [] months = {
+               "Jan","Feb","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"
+       };
+        for(int i = 0; i<months.length; i++){
+            if(date.contains(months[i])){
+                return i+1;
+            }
+        }
+        return 0;
 
+    }
+    /*
+    private String findClass(String aClass) {
+        SharedPreferences sp = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        String lecture1 = sp.getString("Lecture1", "");
+        String lecture2 = sp.getString("Lecture2", "");
+        String lecture3 = sp.getString("Lecture3", "");
+        String lecture4 = sp.getString("Lecture4", "");
+        String lecture5 = sp.getString("Lecture5", "");
+        String lecture6 = sp.getString("Lecture6", "");
+        String lecture7 = sp.getString("Lecture7", "");
+        String lecture8 = sp.getString("Lecture8","");
+        switch(aClass){
+            case lecture1:
+
+                return lecture1;
+            case lecture2:
+
+                return lecture2;
+            case lecture3:
+
+                return lecture3;
+            case lecture4:
+
+                return lecture4;
+            case lecture5:
+
+                return lecture5;
+            case lecture6:
+
+                return lecture6;
+            case lecture7:
+
+                return lecture7;
+            case lecture8:
+
+                return lecture8;
+            default:
+                return " ";
+
+        }
+
+
+    }
+*/
     public void changePeriods(){
         changeperiod1(R.mipmap.bach, "GargeBand", "Mr. B","play music", "A");
         changeperiod2(R.mipmap.berkowitz, "Calc AB", "Mrs. Berkowitz", "AB RULES", "B");
         changeperiod3(R.mipmap.epstein, "AP lit", "Mr. Epstein", "This essay sucks!", "C");
         changeperiod4(R.mipmap.hays, "Digi photos", "Mr. Hays", "Good photos", "D");
     }
+
+    public void setPeriods(){
+        SharedPreferences sp = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        changeBlock1(sp.getString("Lecture1", ""), sp.getString("Teacher1", ""), "A");
+        changeBlock2(sp.getString("Lecture2", ""), sp.getString("Teacher2", ""), "B");
+        changeBlock3(sp.getString("Lecture3", ""), sp.getString("Teacher3", ""), "C");
+        changeBlock4(sp.getString("Lecture4", ""), sp.getString("Teacher4", ""), "D");
+    }
+
+    private void changeBlock1(String lecture,String teacher, String period){
+        class1.setText(lecture);
+        teacher1.setText(teacher);
+        period1.setText(period.toUpperCase());
+    }
+    private void changeBlock2(String lecture,String teacher, String period){
+        class2.setText(lecture);
+        teacher2.setText(teacher);
+        period2.setText(period.toUpperCase());
+
+    }
+    private void changeBlock3(String lecture, String teacher, String period){
+        class3.setText(lecture);
+        teacher3.setText(teacher);
+        period3.setText(period.toUpperCase());
+    }
+    private void changeBlock4(String lecture, String teacher, String period){
+        class4.setText(lecture);
+        teacher4.setText(teacher);
+        period4.setText(period.toUpperCase());
+    }
+
 
     private void changeperiod1(int teacherID, String lecture, String teacherName,
                               String twitterfeed, String periodLetter){
@@ -260,10 +418,10 @@ public class Student extends Activity {
     @Override
     protected void onResume(){
         super.onResume();
+        setPeriods();
     }
     @Override
     protected void onDestroy(){
         super.onDestroy();
     }
-
 }
