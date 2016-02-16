@@ -385,6 +385,19 @@
             android:textColor="#ff000000"
             android:layout_alignTop="@+id/suggestionsLabel"
             android:layout_alignEnd="@+id/Sports" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Free or For Sale"
+            android:id="@+id/freeorsale"
+            android:layout_alignTop="@+id/Parasha"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/Parasha"
+            android:textColor="#ff000000"
+            android:textSize="20dp" />
     </RelativeLayout>
 
 </LinearLayout>

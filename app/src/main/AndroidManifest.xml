@@ -28,12 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity 
-            android:name=".Browser"
-            android:label="@string/browser"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".Student">
-        </activity>
         <activity
             android:name=".Settings"
             android:label="@string/action_settings"

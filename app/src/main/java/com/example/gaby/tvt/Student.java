@@ -14,14 +14,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Date;
 
 
 public class Student extends Activity {
-    String [] periods = {
-      "A","B","C","D","E","F","G","H"
-    };
 
     //First period
     ImageView teacherpic1;
@@ -61,7 +59,7 @@ public class Student extends Activity {
     TextView studentTwitterfeed;
     //..................Parasha...............................
     TextView parasha;
-
+    TextView freeOrSale;
 
 
     @Override
@@ -99,6 +97,7 @@ public class Student extends Activity {
         LinearLayout linearLayoutPeriod4 = (LinearLayout) findViewById(R.id.LinearLayoutPeriod4);
         //........................parasha............................//
         parasha = (TextView) findViewById(R.id.Parasha);
+        freeOrSale = (TextView) findViewById(R.id.freeorsale);
 
         parasha.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,6 +112,14 @@ public class Student extends Activity {
 
             }
         });
+
+        freeOrSale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Go to an activity",Toast.LENGTH_SHORT).show();
+            }
+        });
+
         //.....................Test period 1........................//
 
 
@@ -144,9 +151,12 @@ public class Student extends Activity {
         netClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Student.this, Browser.class);
-                intent.putExtra("URL", "https://13066netclass.blackbaudondemand.com/NetClassroom7/Forms/login.aspx?ReturnUrl=%2fNetClassroom7%2fForms%2fNCShell.aspx");
-                intent.putExtra("Activity","NetClassroom");
+               // Intent intent = new Intent(Student.this, Browser.class);
+               // intent.putExtra("URL", "https://13066netclass.blackbaudondemand.com/NetClassroom7/Forms/login.aspx?ReturnUrl=%2fNetClassroom7%2fForms%2fNCShell.aspx");
+               // intent.putExtra("Activity","NetClassroom");
+                String url = "https://13066netclass.blackbaudondemand.com/NetClassroom7/Forms/login.aspx?ReturnUrl=%2fNetClassroom7%2fForms%2fNCShell.aspx";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
                 startActivity(intent);
             }
         });
@@ -362,8 +372,9 @@ public class Student extends Activity {
                startActivity(intent);
                return true;
            case R.id.blood:
-               //TODO go to activity with the blood drive consent form
-               intent = new Intent(Student.this, Browser.class);
+               //TODO go to pdf activity with blood drive consent form.
+             //  intent = new Intent(Student.this, Browser.class);
+               intent = new Intent(Student.this,PDF.class);
                intent.putExtra("URL","A URL"); //add the url for blood drive
                intent.putExtra("Activity","Blood Drive");
              //  intent.putExtra("ActivityID",R.id.blood);
@@ -389,23 +400,32 @@ public class Student extends Activity {
                return true;
            case R.id.USletterRot:
                //TODO go to an activity with the letter rotation.
+               intent = new Intent(Student.this,PDF.class);
+               intent.putExtra("URL","a url"); //add the url for schedule
+               startActivity(intent);
                return true;
            case R.id.MSletterRot:
                //TODO go to an activity with the letter rotation. same as US but has a tab for MS
+               intent = new Intent(Student.this,PDF.class);
+               intent.putExtra("URL","a url"); //add the url for schedule
+               startActivity(intent);
                return true;
            case R.id.schedule:
-               //TODO go to an activity with the schedule.
-               intent = new Intent(Student.this, Browser.class);
-               intent.putExtra("url","a url"); //add the url for schedule
+               //TODO go to a pdf activity with the schedule.
+               intent = new Intent(Student.this,PDF.class);
+               intent.putExtra("URL","a url"); //add the url for schedule
                startActivity(intent);
                return true;
            case R.id.handbook:
-               //TODO go to an activity with the schedule and handbook.
-               intent = new Intent(Student.this, Browser.class);
-               intent.putExtra("url","http://my.tarbut.com/document.doc?id=112"); //add the url for handbook
-               intent.putExtra("Activity","Student Handbook");
+              //  intent = new Intent(Student.this, Browser.class);
+             //  intent.putExtra("url","http://my.tarbut.com/document.doc?id=112"); //add the url for handbook
+             //  intent.putExtra("Activity","Student Handbook");
+               String url = "http://my.tarbut.com/document.doc?id=112";
+               intent = new Intent(Intent.ACTION_VIEW);
+               intent.setData(Uri.parse(url));
                startActivity(intent);
-               break;
+               startActivity(intent);
+               return true;
        }
 
         return super.onOptionsItemSelected(item);
