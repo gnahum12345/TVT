@@ -66,7 +66,12 @@
             android:parentActivityName=".Settings"
             android:screenOrientation="portrait">
         </activity>
-        
+        <activity
+            android:name=".PDF"
+            android:parentActivityName=".Student"
+            android:screenOrientation="portrait">
+
+        </activity>
     
     
     </application>

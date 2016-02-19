@@ -417,13 +417,12 @@ public class Student extends Activity {
                startActivity(intent);
                return true;
            case R.id.handbook:
-              //  intent = new Intent(Student.this, Browser.class);
-             //  intent.putExtra("url","http://my.tarbut.com/document.doc?id=112"); //add the url for handbook
+               // intent = new Intent(Student.this, PDF.class);
+              // intent.putExtra("URL","http://my.tarbut.com/document.doc?id=112"); //add the url for handbook
              //  intent.putExtra("Activity","Student Handbook");
                String url = "http://my.tarbut.com/document.doc?id=112";
                intent = new Intent(Intent.ACTION_VIEW);
                intent.setData(Uri.parse(url));
-               startActivity(intent);
                startActivity(intent);
                return true;
        }
